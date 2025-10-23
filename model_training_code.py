@@ -1,9 +1,3 @@
-# =========================================
-# CURSOR ULTRA MAX STACKING (CPU-Optimized)
-# Target: F1 > 0.9969
-# Output: LMH8L.csv
-# =========================================
-
 import os
 import numpy as np
 import pandas as pd
@@ -194,6 +188,6 @@ print(classification_report(y_res,oof_labels,digits=6))
 # ---------- TEST PREDICTIONS ----------
 final_test_preds = (test_meta>best_t).astype(int)
 submission = pd.DataFrame({id_col:test_ids,"Label":final_test_preds})
-submission.to_csv("LMH8L.csv",index=False)   # ✅ CPU-optimized LMH8L.csv
-print("\n✅ Saved LMH8L.csv")
+submission.to_csv("LMH8L.csv",index=False) 
+print("\nSaved LMH8L.csv")
 print(submission.head(10))
